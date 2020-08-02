@@ -1,0 +1,36 @@
+# Vintecc
+# =======
+/*
+/*/
+!/Assets/
+!/BuildSetup/
+!/ProjectSettings/
+!/IDESettings/
+!/.gitignore
+!/.gitattributes
+!/BuildScript.bat
+*/LOCAL/
+*/LOCAL.meta
+*/HoudiniEngineAssetCache/
+*/HoudiniEngineAssetCache.meta
+
+# Unity
+# =======
+!Packages/
+!binding_holographic_hmd.json
+!binding_rift.json
+!binding_vive.json
+!binding_vive_pro.json
+!binding_vive_tracker_camera.json
+!bindings_holographic_controller.json
+!bindings_knuckles.json
+!bindings_oculus_touch.json
+!bindings_vive_controller.json
+
+# Packages
+# =========
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+ProjectSettings/Packages/com.unity.progrids/Settings.json
+
+*/Assets.index
+*/Assets.index.meta
