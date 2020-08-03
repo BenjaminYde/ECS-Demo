@@ -9,7 +9,6 @@ namespace Movement01
 {
     public class ShipManagerClassic : AShipManager
     {
-
         public override void CreateShips(GameObject prefabShip, int count)
         {
             base.CreateShips(prefabShip, count);

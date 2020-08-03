@@ -27,6 +27,7 @@ namespace Movement01
         [Header("Ship Settings")] 
         public float ShipSpeed = 50;
         
+        // .. OPERATIONS
         protected override void SetManager(out Manager manager)
         {
             manager = null;
@@ -36,7 +37,7 @@ namespace Movement01
                     manager = CreateManager<ShipManagerClassic>();
                     break;
                 case UpdateType.Jobs:
-                    
+                    manager = CreateManager<ShipManagerJob>();
                     break;
                 case UpdateType.Ecs:
                     break;

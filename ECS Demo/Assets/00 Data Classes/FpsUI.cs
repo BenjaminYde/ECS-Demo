@@ -12,7 +12,9 @@ public class FpsUI : MonoBehaviour
     
     private void Update()
     {
-        float fps = Mathf.Ceil(1.0f / Time.deltaTime);
-        textShipCount.text = fps.ToString(CultureInfo.InvariantCulture);
+        float dt = Time.deltaTime;
+        float fps = Mathf.Ceil(1.0f / dt);
+        float ms = dt * 1000;
+        textShipCount.text = $"{fps.ToString(CultureInfo.InvariantCulture)} ({ms:F1}ms)";
     }
 }
