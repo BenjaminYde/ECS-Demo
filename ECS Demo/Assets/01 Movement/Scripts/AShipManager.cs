@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using Movement01;
 using UnityEngine;
 
-public abstract class AShipManager : MonoBehaviour, IShipManager
+namespace Movement01
 {
-    // .. PROPERTIES
-    public int SpawnCount { get; private set; }
-
-    protected ShipManager authoring = null;
-
-    // .. INITALIZATION
-    public void Initialize(ShipManager authoring)
+    public abstract class AShipManager : Manager<ShipManager>, IShipManager
     {
-        this.authoring = authoring;
-    }
+        // .. PROPERTIES
+        public int SpawnCount { get; private set; }
     
-    // .. PUBLIC OPERATIONS
-    public virtual void CreateShips(GameObject prefabShip, int count)
-    {
-        SpawnCount += count;
-    }
+    
+        // .. PUBLIC OPERATIONS
+        public virtual void CreateShips(GameObject prefabShip, int count)
+        {
+            SpawnCount += count;
+        }
+    }  
 }

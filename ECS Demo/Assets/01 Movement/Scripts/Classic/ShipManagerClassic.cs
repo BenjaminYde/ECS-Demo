@@ -9,12 +9,6 @@ namespace Movement01
 {
     public class ShipManagerClassic : AShipManager
     {
-        public static ShipManagerClassic AddComponent(ShipManager authoring)
-        {
-            var component = authoring.gameObject.AddComponent<ShipManagerClassic>();
-            component.Initialize(authoring);
-            return component;
-        }
 
         public override void CreateShips(GameObject prefabShip, int count)
         {
@@ -23,11 +17,11 @@ namespace Movement01
             Vector3 pos = default;
             for (int i = 0; i < count; ++i)
             {
-                float randomX = Random.Range(-authoring.HalfBound, authoring.HalfBound);
+                float randomX = Random.Range(-Authoring.HalfBound, Authoring.HalfBound);
                 pos.x = randomX;
                 var ship = Instantiate(prefabShip, pos, Quaternion.identity).AddComponent<Ship>();
-                ship.SetHalfBounds(authoring.HalfBound);
-                ship.Speed = authoring.ShipSpeed;
+                ship.SetHalfBounds(Authoring.HalfBound);
+                ship.Speed = Authoring.ShipSpeed;
             }
         }
 
@@ -35,7 +29,7 @@ namespace Movement01
         {
             // input
             if (Input.GetKeyDown(KeyCode.Space))
-                CreateShips(authoring.PrefabShip, authoring.SpawnCount);
+                CreateShips(Authoring.PrefabShip, Authoring.SpawnCount);
         }
     }
 }

@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 namespace Movement01
 {
-    public class ShipManager : MonoBehaviour
+    public class ShipManager : Authoring
     {
         // .. FIELDS
         [Header("Update Method")] 
@@ -27,34 +27,20 @@ namespace Movement01
         [Header("Ship Settings")] 
         public float ShipSpeed = 50;
         
-        [Header("UI Settings")] 
-        [SerializeField]
-        private Text textSpawnCount = null;
-        [SerializeField]
-        private Text textFps = null;
-
-        private AShipManager shipManager = null;
-
-        private void Start()
+        protected override void SetManager(out Manager manager)
         {
+            manager = null;
             switch (updateType)
             {
                 case UpdateType.Mono:
-                    shipManager = ShipManagerClassic.AddComponent(this);
+                    manager = CreateManager<ShipManagerClassic>();
                     break;
                 case UpdateType.Jobs:
+                    
                     break;
                 case UpdateType.Ecs:
                     break;
             }
-        }
-
-        void Update()
-        {
-            // set UI
-            textSpawnCount.text = shipManager.SpawnCount.ToString();
-            float fps = Mathf.Ceil(1.0f / Time.deltaTime);
-            textFps.text = fps.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
