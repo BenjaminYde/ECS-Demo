@@ -19,8 +19,9 @@ namespace Movement01
                 float randomX = Random.Range(-Authoring.HalfBound, Authoring.HalfBound);
                 pos.x = randomX;
                 var ship = Instantiate(prefabShip, pos, Quaternion.identity).AddComponent<Ship>();
-                ship.SetHalfBounds(Authoring.HalfBound);
+                ship.Halfbound = Authoring.HalfBound;
                 ship.Speed = Authoring.ShipSpeed;
+                ship.DoHeavyCalculation = Authoring.DoHeavyCalculation;
             }
         }
 

@@ -33,13 +33,11 @@ public class ShipManagerJob : AShipManager
         {
             moveSpeed = Authoring.ShipSpeed,
             halfBound = Authoring.HalfBound,
-            deltaTime = Time.deltaTime
+            deltaTime = Time.deltaTime,
+            doHeavyCalculation = Authoring.DoHeavyCalculation
         };
         
         handle = job.Schedule(transforms);
-
-        JobHandle.ScheduleBatchedJobs();
-        
     }
     private void OnDisable()
     {
@@ -63,6 +61,7 @@ public class ShipManagerJob : AShipManager
             float randomX = Random.Range(-Authoring.HalfBound, Authoring.HalfBound);
             pos.x = randomX;
             var ship = Instantiate(prefabShip, pos, Quaternion.identity);
+            ship.name = "ship job";
             // add transform to list
             transforms.Add(ship.transform);
         }

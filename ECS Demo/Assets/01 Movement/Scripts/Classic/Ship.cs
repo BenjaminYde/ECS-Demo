@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Movement01
@@ -10,21 +11,26 @@ namespace Movement01
         // .. PROPERTIES
         public float Speed { get; set; }
         
-        // .. FIELDS
-        private float halfbound = 0;
+        public float Halfbound { get; set; }
+        public bool DoHeavyCalculation { get; set; }
+        
+        
+        
 
         // .. MONO
         private void Update()
         {
             Move(Time.deltaTime);
+
+            if (DoHeavyCalculation)
+            {
+                float value = 0;
+                for (int i = 0; i < 10000; i++)
+                {
+                    value = math.exp10(math.sqrt(value));
+                }
+            }
         }
-    
-        // .. PUBLIC OPERATIONS
-        public void SetHalfBounds(float bound)
-        {
-            halfbound = bound;
-        }
-        
 
         // .. PRIVATE OPERATIONS
         private void Move(float deltaTime)
@@ -33,8 +39,8 @@ namespace Movement01
 
             pos += Vector3.forward * (Speed * deltaTime);;
 
-            if (pos.z > halfbound) 
-                pos.z = -halfbound;
+            if (pos.z > Halfbound) 
+                pos.z = -Halfbound;
 
             transform.localPosition = pos;
         }

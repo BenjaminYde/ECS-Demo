@@ -26,6 +26,7 @@ namespace Movement01
         
         [Header("Ship Settings")] 
         public float ShipSpeed = 50;
+        public bool DoHeavyCalculation = false;
         
         // .. OPERATIONS
         protected override void SetManager(out Manager manager)
