@@ -10,5 +10,6 @@ namespace Movement01
     {
         public float speed;
         public float halfBound;
+        public bool doHeavyCalculation;
     }
 }

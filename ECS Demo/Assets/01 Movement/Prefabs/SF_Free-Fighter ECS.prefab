@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  halfBound: 0
+  doHeavyCalculation: 0
 --- !u!1001 &5513930932030923632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68,6 +70,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 33892153876024192, guid: 405b75a6c6593f84f899e431e1791622,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: a2b9f16335cfda74081507453d1466ee, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b75a6c6593f84f899e431e1791622, type: 3}
 --- !u!1 &5512813831285779002 stripped

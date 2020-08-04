@@ -19,7 +19,16 @@ namespace Movement01
 
                 if (pos.z > moveForward.halfBound)
                     pos.z = -moveForward.halfBound;
-                
+
+                if (moveForward.doHeavyCalculation)
+                {
+                    float value = 0;
+                    for (int i = 0; i < 10000; i++)
+                    {
+                        value = math.exp10(math.sqrt(value));
+                    }
+                }
+
                 translation.Value = pos;
             }).ScheduleParallel();
         }

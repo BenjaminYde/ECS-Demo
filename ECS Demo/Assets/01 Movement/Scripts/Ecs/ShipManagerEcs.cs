@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 public class ShipManagerEcs : AShipManager
 {
+    
     public override void CreateShips(GameObject prefabShip, int count)
     {
         base.CreateShips(prefabShip, count);
@@ -26,7 +27,7 @@ public class ShipManagerEcs : AShipManager
 
             float randomX = Random.Range(-Authoring.HalfBound, Authoring.HalfBound);
             entityManager.SetComponentData(shipArray[i],new Translation() {Value = new float3(randomX,0,0)});
-            entityManager.SetComponentData(shipArray[i],new MoveForward() {speed = Authoring.ShipSpeed, halfBound = Authoring.HalfBound});
+            entityManager.SetComponentData(shipArray[i],new MoveForward() {speed = Authoring.ShipSpeed, halfBound = Authoring.HalfBound, doHeavyCalculation = Authoring.DoHeavyCalculation});
         }
         
         shipArray.Dispose();
