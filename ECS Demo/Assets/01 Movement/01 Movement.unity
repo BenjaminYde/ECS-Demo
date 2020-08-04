@@ -228,12 +228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390cc0c6dc10de645a28df367fe6f568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateType: 0
+  updateType: 2
   PrefabShip: {fileID: 1152354105411914, guid: 405b75a6c6593f84f899e431e1791622, type: 3}
+  PrefabShipECS: {fileID: 5512813831285779002, guid: d6b7edb0a2602c74d99fcf6a34295f34,
+    type: 3}
   SpawnCount: 1000
   HalfBound: 500
   ShipSpeed: 50
-  DoHeavyCalculation: 0
+  DoHeavyCalculation: 1
 --- !u!4 &109802608
 Transform:
   m_ObjectHideFlags: 0

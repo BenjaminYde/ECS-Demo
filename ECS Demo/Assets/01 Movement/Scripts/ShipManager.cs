@@ -15,10 +15,12 @@ namespace Movement01
         [Header("Update Method")] 
         [SerializeField]
         public UpdateType updateType = default;
-        
+
         [Header("Spawn Settings")] 
         [SerializeField]
         public GameObject PrefabShip = null;
+        [SerializeField]
+        public GameObject PrefabShipECS = null;
         [SerializeField]
         public int SpawnCount = 1000;
         [SerializeField]
@@ -41,6 +43,7 @@ namespace Movement01
                     manager = CreateManager<ShipManagerJob>();
                     break;
                 case UpdateType.Ecs:
+                    manager = CreateManager<ShipManagerEcs>();
                     break;
             }
         }
