@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 42009765}
   - component: {fileID: 42009764}
   m_Layer: 5
-  m_Name: 'label: fps'
+  m_Name: Label.Fps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 109802608}
   - component: {fileID: 109802607}
   m_Layer: 0
-  m_Name: ShipManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,14 +231,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390cc0c6dc10de645a28df367fe6f568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateType: 2
+  UpdateMethod: 2
   PrefabShip: {fileID: 1152354105411914, guid: 405b75a6c6593f84f899e431e1791622, type: 3}
   PrefabShipECS: {fileID: 5512813831285779002, guid: d6b7edb0a2602c74d99fcf6a34295f34,
     type: 3}
   SpawnCount: 1000
-  HalfBound: 500
-  ShipSpeed: 50
-  DoHeavyCalculation: 1
+  ShipCreationAreaSize: 500
+  ShipDescription:
+    ShipSpeed: 50
+    DoHeavyCalculation: 1
 --- !u!4 &109802608
 Transform:
   m_ObjectHideFlags: 0
@@ -382,7 +383,7 @@ GameObject:
   - component: {fileID: 666510936}
   - component: {fileID: 666510935}
   m_Layer: 5
-  m_Name: 'label: spawn count'
+  m_Name: Label.SpawnCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,6 +461,7 @@ GameObject:
   - component: {fileID: 889143784}
   - component: {fileID: 889143783}
   - component: {fileID: 889143782}
+  - component: {fileID: 889143785}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -532,6 +534,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &889143785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889143781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1212262954
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +579,7 @@ GameObject:
   - component: {fileID: 1212262957}
   - component: {fileID: 1212262956}
   m_Layer: 5
-  m_Name: 'txt: spawn count'
+  m_Name: Text.SpawnCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,7 +854,7 @@ GameObject:
   - component: {fileID: 1910686924}
   - component: {fileID: 1910686923}
   m_Layer: 5
-  m_Name: 'txt: fps'
+  m_Name: Text.Fps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,7 +934,7 @@ GameObject:
   - component: {fileID: 1980217093}
   - component: {fileID: 1980217094}
   m_Layer: 5
-  m_Name: ShipManager
+  m_Name: UI.GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,5 +973,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbeb2924ac10d0408ced3b436200d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipManager: {fileID: 109802607}
+  gameManager: {fileID: 109802607}
   textShipCount: {fileID: 1212262956}

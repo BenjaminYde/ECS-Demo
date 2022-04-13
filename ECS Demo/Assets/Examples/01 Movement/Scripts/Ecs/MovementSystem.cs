@@ -10,17 +10,18 @@ namespace Movement01
         protected override void OnUpdate()
         {
             float dt = Time.DeltaTime;
+            
             // 2. run over all entities with MoveForward Component (lambda expression)
             Entities.ForEach((ref Translation translation, ref Rotation rotation, ref MoveForward moveForward) =>
             {
                 // 3. apply logic
                 float3 pos = translation.Value;
-                pos += moveForward.speed * dt * math.forward(rotation.Value);
+                pos += moveForward.Speed * dt * math.forward(rotation.Value);
 
-                if (pos.z > moveForward.halfBound)
-                    pos.z = -moveForward.halfBound;
+                if (pos.z > moveForward.MaxMovePositionZ)
+                    pos.z = -moveForward.MaxMovePositionZ;
 
-                if (moveForward.doHeavyCalculation)
+                if (moveForward.DoHeavyCalculation)
                 {
                     float value = 0;
                     for (int i = 0; i < 10000; i++)

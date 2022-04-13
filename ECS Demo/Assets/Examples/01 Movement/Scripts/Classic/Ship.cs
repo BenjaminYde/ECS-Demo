@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 
 namespace Movement01
@@ -9,15 +6,14 @@ namespace Movement01
     public class Ship : MonoBehaviour
     {
         // .. PROPERTIES
-        public float Speed { get; set; }
         
-        public float Halfbound { get; set; }
+        public float Speed { get; set; }
+        public float MaxMovePositionZ { get; set; }
         public bool DoHeavyCalculation { get; set; }
         
         
-        
-
         // .. MONO
+        
         private void Update()
         {
             Move(Time.deltaTime);
@@ -32,15 +28,16 @@ namespace Movement01
             }
         }
 
-        // .. PRIVATE OPERATIONS
+        // .. PRIVATE 
+        
         private void Move(float deltaTime)
         {
             var pos = transform.localPosition;
 
             pos += Vector3.forward * (Speed * deltaTime);;
 
-            if (pos.z > Halfbound) 
-                pos.z = -Halfbound;
+            if (pos.z > MaxMovePositionZ) 
+                pos.z = -MaxMovePositionZ;
 
             transform.localPosition = pos;
         }
