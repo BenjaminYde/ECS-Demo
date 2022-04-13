@@ -4,7 +4,7 @@ using Unity.Transforms;
 
 namespace Movement01
 {
-    public class MovementSystem : SystemBase
+    public partial class MovementSystem : SystemBase
     {
         // 1. create on update method
         protected override void OnUpdate()
